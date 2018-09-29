@@ -19,9 +19,15 @@ function crearArt(nombreArt,img){
 function accionBoton(){
 
   var titulo = document.getElementById('titulo').value;
-  var imagen = document.getElementById('imagen').value;
+  var imagen = document.getElementById('imagen').files[0];
 
-  crearArt(titulo,imagen);
+  var reader  = new FileReader();
+  reader.onloadend = function () {
+    var imagenUrl = reader.result;
+    crearArt(titulo,imagenUrl);
+  }
+
+  reader.readAsDataURL(imagen);
 
 }
 

@@ -6,7 +6,7 @@
     <title>ola</title>
   </head>
   <body bgcolor="cyan">
-    
+
       <header align="center" bgcolor="red" >
         <h1>Android</h1>
       </header>
@@ -19,7 +19,7 @@
         <h1>menu</h1>
       </nav>
 
-      <section>
+      <section id="articulos">
 
         <hr/>
 
@@ -45,12 +45,22 @@
       </section>
 
       <aside>
-        <h1 >chau</h1>
+        <h1>nuevo art</h1>
+        <form id="formulario">
+          <input type="text" id="titulo" value="" placeholder="Inserte un titulo..."/>
+          </br>
+          <input type="file" id="imagen" value=""/>
+          </br>
+          <input type="button" id="botonCrear" value="crear" onclick="accionBoton()">
+        </form>
+
       </aside>
 
       <footer>
         <h5>propiedad de tu vieja</h5>
       </footer>
+
+      <script src="js/main.js" charset="utf-8"></script>
   </body>
 
   <!--

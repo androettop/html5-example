@@ -14,49 +14,79 @@ function addArticulo(listaArt,nomArt,imgArt){
   guardarArt(listaArt);
 }
 
-function cargarArt(){
-  var datos = localStorage.getItem("listaDeArticulos");
-  listaArt =  JSON.parse(datos);
+
+function  elimArticulo(pos){
+  delete listaArt[pos];
+  listaArt = listaArt.filter(x => x != null); //solo deja en la lista todos los x, tal que x no sea nulo
+  guardarArt(listaArt);
+  var elemArticulo = document.getElementById(pos);
+  elemArticulo.remove();
 }
 
-function mostrarArt(nombreArt,img){
+function cargarArt(){
+  var datos = localStorage.getItem("listaDeArticulos");
+  if (datos!=null) {
+    listaArt =  JSON.parse(datos);
+  } else {
+      console.log("no tenes art cargados en, ehhh daa chau");
+  }
+}
+
+function mostrarArt(nombreArt,img,i){
 
   var articulos = document.getElementById('articulos');
   var articulo = document.createElement('article');
   var titulo = document.createElement('h2');
   var imagen = document.createElement('img');
+  var boton = document.createElement('button');
   var linea = document.createElement("hr");
+
 
   titulo.innerText=nombreArt;
   imagen.src=img;
-  imagen.setAttribute('width','100%');
-
-  articulo.appendChild(titulo);
-  articulo.appendChild(imagen);
-  articulos.appendChild(articulo);
-  articulos.appendChild(linea);
-}
-function mostrarListaDeArt(listaArt) {
-  var i=0;
-  while (i < listaArt.length) {
-    mostrarArt(listaArt[i].titulo,listaArt[i].imagen);
-    i++;
+  boton.innerText="eliminar art";
+  boton.onclick= function (){
+    elimArticulo(i);
   }
 
+
+  imagen.setAttribute('width','100%');
+  articulo.id=i;
+  articulo.appendChild(titulo);
+  articulo.appendChild(imagen);
+  articulo.appendChild(boton);
+  articulo.append(linea);
+  articulos.prepend(articulo);
+}
+
+
+function mostrarListaDeArt(listaArt) {
+  var i=0;
+  if (listaArt.length>0) {
+    while (i < listaArt.length) {
+      mostrarArt(listaArt[i].titulo,listaArt[i].imagen,i);
+      i++;
+    }
+  } else {
+     console.log("no tenes art cargados");
+  }
 }
 
 function accionBoton(){
-
-  var titulo = document.getElementById('titulo').value;
-  var imagen = document.getElementById('imagen').files[0];
+  var elemTitulo = document.getElementById('titulo');
+  var elemImg =document.getElementById('imagen');
+  var titulo = elemTitulo.value;
+  var imagen = elemImg.files[0];
+  var elemFormulario = document.getElementById('formulario');
 
   var reader  = new FileReader();
   reader.onloadend = function () {
     var imagenUrl = reader.result;
-    mostrarArt(titulo,imagenUrl);
+    mostrarArt(titulo,imagenUrl,listaArt.length);
     addArticulo(listaArt,titulo,imagenUrl);
   }
   reader.readAsDataURL(imagen);
+  elemFormulario.reset();
 }
 
 /*

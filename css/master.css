@@ -1,0 +1,111 @@
+body{
+  margin: 0px;
+  font-family: sans-serif;
+  background: #efefef;
+}
+
+.degradado{
+    color:white;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
+    background: linear-gradient(#9eee9d,#06c640);
+}
+
+button.degradado {
+    font-size: 16px;
+    border: 0px;
+    padding: 3px 20px;
+    transition: box-shadow 0.5s ease;
+}
+button.degradado:hover{
+  box-shadow: inset 1px 1px 50px rgba(0,0,0,0.5);
+  color: #ddd;
+}
+
+header {
+  margin: 10px;
+}
+header h1 {
+  margin: 0px;
+  font-size: 25px;
+  padding: 5px 0px;
+  font-weight: normal;
+}
+
+section#crearArt {
+  margin: 0px 10px 10px 10px;
+  background: #b9b9b9;
+  box-shadow:  1px 1px 5px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+section#crearArt input {
+  border-radius: 6px;
+  color: black;
+  font-size: 15px;
+  padding-left: 3px;
+  margin-bottom: 8px;
+}
+section#crearArt #formulario #for {
+  display: inline-block;
+  vertical-align: top;
+}
+section#crearArt #formulario #botonCrear {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+div#titulos {
+  color: black;
+  padding-left: 10px;
+  margin: 0px;
+  background: #8b8b8b;
+  font-size: 20px;
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
+}
+div#titulos h2 {
+  margin: 0px;
+  font-size: 20px;
+  font-weight: normal;
+
+}
+
+article {
+  margin: 10px 10px 0px 10px;
+  background: white;
+  box-shadow:  1px 1px 5px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  transition: box-shadow 0.5s ease;
+}
+article:hover{
+  box-shadow:  1px 1px 50px rgba(0,0,0,0.5);
+}
+article h2 {
+  margin: 0px;
+  padding: 3px 0px 1px 0px;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  background: #8b8b8b;
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
+}
+article img {
+  margin: 15px 0px 0px 15px;
+  width: 45%;
+  border-radius: 15px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+article button {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+
+
+/**/

@@ -3,43 +3,42 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/master.css">
     <title>ola</title>
   </head>
-  <body bgcolor="cyan">
+  <body >
 
-      <header align="center" bgcolor="red" >
+      <header class="degradado" align="center" bgcolor="red" >
         <h1>Android</h1>
       </header>
 
-      <div>
-        <h2 align="center">Andoid es un SO</h2>
-      </div>
+      <section id="crearArt">
 
-      <nav>
-        <h1>menu</h1>
-      </nav>
+        <form id="formulario">
+          <div id="for" >
+            <input type="text" id="titulo" value="" placeholder="Inserte un titulo..."/>
+            </br>
+            <input type="file" id="imagen" value=""/>
+        </div>
+          <button type="button" id="botonCrear" class="degradado" onclick="accionBoton()">Crear</button>
+        </form>
+
+      </section>
+
+      <div id="titulos">
+        <h2 >Articulos:</h2>
+      </div>
 
       <section id="articulos">
 
       </section>
-
-      <aside>
-        <h1>nuevo art</h1>
-        <form id="formulario">
-          <input type="text" id="titulo" value="" placeholder="Inserte un titulo..."/>
-          </br>
-          <input type="file" id="imagen" value=""/>
-          </br>
-          <input type="button" id="botonCrear" value="crear" onclick="accionBoton()">
-        </form>
-
-      </aside>
 
       <footer>
         <h5>propiedad de tu vieja</h5>
       </footer>
 
       <script src="js/main.js" charset="utf-8"></script>
+      <script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
       <script>
             cargarArt();
             mostrarListaDeArt(listaArt)

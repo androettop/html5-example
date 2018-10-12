@@ -39,23 +39,19 @@ function mostrarArt(nombreArt,img,i){
   var titulo = document.createElement('h2');
   var imagen = document.createElement('img');
   var boton = document.createElement('button');
-  var linea = document.createElement("hr");
 
-
+  boton.classList.add("degradado");
   titulo.innerText=nombreArt;
   imagen.src=img;
   boton.innerText="eliminar art";
-  boton.onclick= function (){
-    elimArticulo(i);
-  }
-
-
+  boton.onclick= function(){
+      elimArticulo(i);
+    }
   imagen.setAttribute('width','100%');
   articulo.id=i;
   articulo.appendChild(titulo);
   articulo.appendChild(imagen);
   articulo.appendChild(boton);
-  articulo.append(linea);
   articulos.prepend(articulo);
 }
 
@@ -78,7 +74,6 @@ function accionBoton(){
   var titulo = elemTitulo.value;
   var imagen = elemImg.files[0];
   var elemFormulario = document.getElementById('formulario');
-
   var reader  = new FileReader();
   reader.onloadend = function () {
     var imagenUrl = reader.result;
